@@ -1,24 +1,40 @@
-# Ride_Sharing
+# Ride Sharing
 
-## Overview of the analysis
-I conducted the analyses and visualization of the ride-sharing data very similar to Uber. I had two datasets: ride data with location, date and fare for every ride, and city data which describes type of city and number of drivers. The goal was to compare quantity and fares of rides in every city type: urban, suburban and rural; create clear visualization with matplotlib library and provide recommendation to the CEO for addressing any disparities among the city types.
-
-During the analysis I’ve used Jupyter Notebook, pandas and matplotlib libraries.
+## Overview of the Analysis
+For this module, I analyzed the ride sharing data of a Uber-similar app. I had two csv files to use as well: ride_data, which has the ride data with location the ride occured at, the date, and the fare collected for every ride, and city_data, which describes type of city and number of drivers per city. The goal of this analysis is to compare the fares of rural, suburban, and urban cities, to determine the average fare of each respective location, and to compare the total fare collection between the three types over the course of some months.
+### Resources
+- Jupyter Notebook
+- Pandas 
+- Matplotlib 
 
 ## Results
-In order to perform the analysis, I merged datasets using left join based on the city column and got a one dataset with all available data. First of all, I created summary dataframe by city type. It has revealed first insight - there are few drivers and rides in rural cities with higher average fares compare to urban cities:
+In order to complete this analysis, I had to merge all of the DataFrames together, I then used this to create a summary DataFrame that would display a summary of the ride data over the rural, suburban, and urban areas, leading to the following results: 
 
-There are 13 times more rides in urban cities compare to rural cities (1,625 vs 125 rides)
-The average fare per ride is 1.4 times less and average fare per driver is 3.4 times less in urban cities compare to rural cities ($24.53 vs $34.62 and $16.57 vs $55.49)
-The total fares in urban cities is 9 times higher than in rural cities and 2 times higher than suburban cities. ($39,854.38 vs $4,327.93) 
-Then I created a multiple line plot that shows the total weekly of the fares for each type of city. The yellow line for urban cities is higher than red and blue lines for suburban and rural cities, respectively. That means ride-sharing company has more total fares and revenue in urban cities rather than in suburban and rural cities.
+For every person riding in the rural cities, there are 5 riding in the suburban cities and there are 13 in the urban cities. (125 vs 625 vs 1625 rides)
+
+The average fare for the urban cities is about $6 and $10 cheaper per ride than their suburban and rural cities respectively, as well as 2.5 times cheaper and 3.5 times cheaper than suburban and rural cities respectively. ($24.53 vs $30.97 vs $34.62 and $16.57 vs $39.50 vs $55.49)
+
+The total fares in urban cities is about nine times that of the fare in rural cities and twice that of suburban cities. ($39,854.38 vs $19,356.33 vs $4,327.93)
+
+![image](https://github.com/CharlesBootCamp/Ride_Sharing/blob/main/Ride%20Sharing/Resources/Total%20Rides.png)
+
+Following is the daily fare collection chart of the cities with a timetable to show when they were completed:
+
+![image](https://github.com/CharlesBootCamp/Ride_Sharing/blob/main/Ride%20Sharing/Resources/Daily%20fare.png)
+
+Lastly, a line graph was created to display how the weekly fare of each type of city did over the course of January through April. The graph displays that the urban cities has the highest weekly fare collection, followed by the suburban cities, and then the rural cities. This graph helps provide data that more closely-knit communities provide more opportunity for ride sharing.
 ![image](https://github.com/CharlesBootCamp/Ride_Sharing/blob/main/Ride%20Sharing/analysis/PyBer_fare_summary.png)
 
-For example, the maximum total weekly fares in urban cities is close to $2500 at the end of February, while the maximum total weekly fares in rural cities is $500 at the beginning of April.
+From the graph, it can be seen that the maximum total weekly fares in urban cities is close to $2,500 at the end of February, while the maximum total weekly fares in suburban cities is about $1,500 at the end of February, and the maximum total weekly fares in rural cities is $500 at the beginning of April.
+
+Following is the weekly fare collection chart of the cities:
+
+
+![image](https://github.com/CharlesBootCamp/Ride_Sharing/blob/main/Ride%20Sharing/Resources/Weekly%20fare.png)
 
 ## Summary
-While the urban cities rides make more revenue, the rural cities rides are more profitable. So, I would focus on improving profitability of urban cities rides.
+In the end, while urban cities provide the most amount of money, the rural ones are the most profitable, leading to the idea that rural methods should be adopted elsewhere to potentially boost business.
 
-I would recommend to reduce number of drivers in urban cities. There are 2,405 drivers which made only 1,625 rides. That means not every driver has done at least one ride. Reducing number of drivers will increase average fare per driver, as now it is 3.4 times less compare to rural cities.
+One potential solution to this problem is to reduce number of drivers in urban cities. While there are 2,405 drivers registered in the database, they collectively made only 1,625 rides, this means that not even every driver got a single ride over the period of time, making the whole system inefficient.
 
-Additional analysis of ride duration should be done. It may be insightful to calculate average fare per 1 minute or 1 kilometer and compare the value among city types. If the fare for 1 minute of ride in rural cities is significantly higher than fare in urban cities, ride fare may be increased for urban city types. It helps to increase average fare per ride in urban cities and get even more revenue.
+Another potential solution is to make quantify a number of distance one can go per minute, making it so it can be seen who does the best with the time they have. To help combat this, urban cities can increase the price of fare, although this may not be taken well by customers.
